@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>github-easy-guide 仓库包 v4 · 交付前自检报告</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1f2430; --sub:#5b6472;
+    --line:#e3e7ec; --ok:#1a7f52; --okbg:#eaf6ef;
+    --warn:#a35b00; --warnbg:#fff4e2; --accent:#2c5cc5; --accentbg:#eef3ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:32px 20px 64px;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.75}
+  .wrap{max-width:1080px;margin:0 auto}
+  header{margin-bottom:22px}
+  h1{font-size:26px;margin:0 0 8px;letter-spacing:-.3px}
+  .meta{color:var(--sub);font-size:13px}
+  .verdict{background:var(--okbg);border:1px solid #bfdfcd;border-left:4px solid var(--ok);
+    border-radius:10px;padding:16px 20px;margin:20px 0 26px}
+  .verdict b{color:var(--ok)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:820px){.cols{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;
+    box-shadow:0 1px 3px rgba(20,30,50,.04)}
+  .card h2{font-size:18px;margin:0 0 4px;display:flex;align-items:center;gap:9px}
+  .card .hint{color:var(--sub);font-size:13px;margin:0 0 16px}
+  .tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:20px;
+    background:var(--accentbg);color:var(--accent)}
+  h3{font-size:14px;margin:20px 0 8px;color:var(--sub);font-weight:600}
+  ul{margin:0;padding-left:20px} li{margin:6px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--sub);font-weight:600;background:#fafbfc}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;
+    background:#f1f3f6;padding:1px 5px;border-radius:4px;color:#35405a}
+  .pill{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:5px;white-space:nowrap}
+  .p-ok{background:var(--okbg);color:var(--ok)}
+  .p-fix{background:var(--warnbg);color:var(--warn)}
+  .p-info{background:var(--accentbg);color:var(--accent)}
+  .issue{border-left:3px solid var(--warn);padding:2px 0 2px 14px;margin:16px 0}
+  .issue .t{font-weight:600;font-size:14.5px;margin-bottom:3px}
+  .issue .d{color:var(--sub);font-size:13.5px}
+  .full{margin-top:20px}
+  footer{margin-top:26px;color:var(--sub);font-size:13px;line-height:1.8}
+  .kv{display:grid;grid-template-columns:150px 1fr;gap:6px 12px;font-size:13.5px}
+  .kv .k{color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>github-easy-guide 仓库包 v4 · 交付前自检报告</h1>
+  <div class="meta">核对日期：2026 年 11 月 16 日　·　受检文件：github-easy-guide-repo-v4.zip　·　原文件未被改动</div>
+</header>
+
+<div class="verdict">
+  <b>结论：包本身是完整的，可以交付；但有 4 处会造成「章节对不上、链接失效、装错包、路径未确证」的问题，已全部修好并另出修订版。</b><br>
+  两个压缩包都无损，技能说明文件的格式合法，内外两份技能说明逐字节相同。发现的问题集中在说明书之间的互相指路、已失效的参考链接、以及两个同名压缩包容易装错。修订版已重新打包并通过 8 项落盘校验。
+</div>
+
+<div class="cols">
+
+  <!-- ========== 左栏：这份里有什么 ========== -->
+  <section class="card">
+    <h2><span class="tag">①</span> 这份里有什么</h2>
+    <p class="hint">包里一共 5 个文件，外面套一层同名文件夹。</p>
+
+    <table>
+      <tr><th>文件</th><th>作用</th></tr>
+      <tr><td><code>README.md</code></td><td>主说明书：下载、安装、怎么用、示例</td></tr>
+      <tr><td><code>INSTALL.md</code></td><td>完整安装清单：各款助手的按钮位置、文件夹位置、验证方法</td></tr>
+      <tr><td><code>SKILL.md</code></td><td>技能本体（12,780 字节），给人工智能助手看的工作说明</td></tr>
+      <tr><td><code>LICENSE</code></td><td>MIT 许可（允许自由使用、修改、分发）</td></tr>
+      <tr><td><code>github-easy-guide.zip</code></td><td>技能安装包（6,462 字节），里面只含一份 <code>SKILL.md</code></td></tr>
+    </table>
+
+    <h3>这个技能是干什么用的</h3>
+    <p style="margin:0">给电脑小白讲明白一个 GitHub 项目：先两三句说清能做什么，再把做法、画幅、时长、风格等一项一项列出让使用者选，最后给出照着点就行的一步一步步骤，以及一段可以直接复制的开工指令。它会去查项目用到的外部网站当前能否打开、是否收费；查不到就直说查不到，不编造。默认只讲步骤，不替使用者运行或付费。</p>
+
+    <h3>已通过的核验（逐项列出，共 16 项）</h3>
+    <table>
+      <tr><th>核验项</th><th>结果</th></tr>
+      <tr><td>外层整包、内层技能包完整性（逐项解压检测）</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>技能安装包内只含一份技能说明</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>内外两份技能说明逐字节相同</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>技能开头的信息区格式（以系统自带解析器读取）</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>信息区含名称、含用途说明，名称与文件夹名一致</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>主说明书、安装清单、技能说明、许可文件、技能包 5 个文件都在</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>主说明书两处声明与技能包实物一致</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>说明书引用的 3 处本地链接目标都存在</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>「七条铁律」实际编号为 1 至 7，无缺号</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>许可文件与主说明书标注一致</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>安装清单里 6 条外部来源链接逐条打开核对，并以 1 条可正常打开的链接单独复测作对照</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>两处失效链接各复测 2 次，排除网络抖动导致的误报</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>1 条首次超时的来源复测正常并读到原文，未误报为失效</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>本机用户级技能目录实测（27 个技能目录在用）</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>重新打包后 8 项修订点逐项落盘校验</td><td><span class="pill p-ok">通过</span></td></tr>
+      <tr><td>原件摘要前后一致，确认全程只读未写入</td><td><span class="pill p-ok">通过</span></td></tr>
+    </table>
+
+    <h3>本机实测到的安装事实</h3>
+    <ul>
+      <li><code>~/.workbuddy/skills/</code> 在本机确实存在，且已有 27 个技能目录在用 —— 安装清单里这条路径是有效的。</li>
+      <li><code>~/.codex/skills/</code> 在本机也存在。</li>
+      <li>本机技能目录里目前<strong>没有</strong> github-easy-guide；本次只审包、未改动本机技能目录。</li>
+    </ul>
+  </section>
+
+  <!-- ========== 右栏：缺什么 ========== -->
+  <section class="card">
+    <h2><span class="tag">②</span> 缺什么 · 已修什么 · 还需留意什么</h2>
+    <p class="hint">前 4 项已改好；最后 2 项是仍需知道的边界，不需要补动作。</p>
+
+    <div class="issue">
+      <div class="t">1. 安装清单让读者去找「方法一」，但主说明书里没有这一节 <span class="pill p-fix">已修</span></div>
+      <div class="d">安装清单开头写「照着装不生效，请改用主说明书里的方法一」，而主说明书那一节标题是「推荐：让你的 AI 助手自己装」，全文没有「方法一」三个字；安装清单自己又是从「方法二」开始编号。读者点过去会对不上。<br><strong>改法：</strong>把主说明书该节标题改为「方法一（推荐）：让你的 AI 助手自己装」，编号与方法二、三、四接上，链接指向不变。</div>
+    </div>
+
+    <div class="issue">
+      <div class="t">2. 两条参考链接已经打不开，却仍标成「官方／第三方来源」 <span class="pill p-fix">已修</span></div>
+      <div class="d">
+        <table style="margin-top:6px">
+          <tr><th>原链接</th><th>实测</th></tr>
+          <tr><td>腾讯云文档 1831/134516（标为 CodeBuddy 官方文档）</td><td><span class="pill p-info">失效 ×2</span></td></tr>
+          <tr><td>aicoding.csdn.net／6a238a…（标为 TRAE 第三方教程）</td><td><span class="pill p-info">失效 ×2</span></td></tr>
+        </table>
+        两条都各请求两次，排除网络抖动；同时以一条可正常打开的官方文档作对照，确认不是检测本身失灵。<br><strong>改法：</strong>去掉失效链接，如实写明「原链接于 2026-11-16 核实失效，暂未找到可替代的在读资料」，相关路径保留「待核实」标注。<strong>没有编造任何替代链接。</strong>
+      </div>
+    </div>
+
+    <div class="issue">
+      <div class="t">3. 两个压缩包解压后是同名文件夹，内容却不同 <span class="pill p-fix">已修</span></div>
+      <div class="d">整包（文件名带 <code>repo</code> 字样，18,661 字节）解压后是 5 个文件的文件夹；技能包（6,462 字节）解压后是同名文件夹、里面只有一份技能说明。主说明书只说「下载一个文件」，安装清单又说「把解压出来的整个文件夹放进去」，两者极易混用。<br><strong>改法：</strong>在安装清单开头新增对照表，写清各自用途、如何一眼区分，并说明手动放文件夹时两者都可用、界面上传建议用小的那个。</div>
+    </div>
+
+    <div class="issue">
+      <div class="t">4. 本机可确证的路径仍标着「待核实」 <span class="pill p-fix">已修</span></div>
+      <div class="d"><strong>改法：</strong>把本机实测结论写进安装清单 WorkBuddy 那一行；同时为另外三条已核实可打开的来源补上核实日期与一句内容说明（其中 TRAE 路径那条首次请求超时，复测正常并已读到原文，未误报为失效）。</div>
+    </div>
+
+    <div class="issue" style="border-left-color:var(--accent)">
+      <div class="t">5. 安装清单仍有 20 处「待核实」，属于如实标注，不是缺陷 <span class="pill p-info">保留</span></div>
+      <div class="d">涉及没装在本机的助手（TRAE、Qoder、通义灵码等）的菜单名与文件夹位置。本机没有这些软件，无法验证，写「待核实」比猜一个更可靠。另外查过 WorkBuddy 官方文档站：简介页没有技能安装说明，技能专页显示页面不存在，站内检索也无结果 —— 所以「界面上传技能」这一条继续保持「待核实」，没有替它编一个按钮位置。（修订后计数为 20 处，比原版多 1 处，来自对两条失效来源新增的如实说明。）</div>
+    </div>
+
+    <div class="issue" style="border-left-color:var(--accent)">
+      <div class="t">6. 技能本体未改动 <span class="pill p-info">保留</span></div>
+      <div class="d">本次修订范围是说明书之间的互相指路与参考链接有效性。技能说明文件（<code>SKILL.md</code>）逐字节保持不变，技能安装包原样保留，未改写其中任何工作规则。</div>
+    </div>
+  </section>
+</div>
+
+<section class="card full">
+  <h2>修订版落盘校验（8 项，全部通过）</h2>
+  <table>
+    <tr><th>校验项</th><th>结果</th></tr>
+    <tr><td>主说明书出现「方法一（推荐）」</td><td><span class="pill p-ok">通过</span></td></tr>
+    <tr><td>安装清单仍正确指向主说明书的方法一</td><td><span class="pill p-ok">通过</span></td></tr>
+    <tr><td>新增双压缩包对照表</td><td><span class="pill p-ok">通过</span></td></tr>
+    <tr><td>两条失效链接已从文中移除并写明失效</td><td><span class="pill p-ok">通过</span></td></tr>
+    <tr><td>本机实测结论已写入安装清单</td><td><span class="pill p-ok">通过</span></td></tr>
+    <tr><td>未新增任何未经核实的外部链接</td><td><span class="pill p-ok">通过</span></td></tr>
+    <tr><td>技能说明文件与原件一致（摘要比对）</td><td><span class="pill p-ok">通过</span></td></tr>
+    <tr><td>重新打包后逐项解压检测无损</td><td><span class="pill p-ok">通过</span></td></tr>
+  </table>
+
+  <h3>交付物</h3>
+  <div class="kv">
+    <div class="k">修订版整包</div><div><code>github-easy-guide-repo-v5-修订版.zip</code>（18,886 字节，结构与原包一致）</div>
+    <div class="k">修订版解压目录</div><div><code>github-easy-guide-修订版/</code></div>
+    <div class="k">自检报告</div><div><code>github-easy-guide-v4-交付前自检报告.html</code>（本文件）</div>
+    <div class="k">原文件</div><div><code>~/Downloads/1/github-easy-guide-repo-v4.zip</code>　只读打开，未写入，摘要前缀 <code>fc524b292ee4b3a1</code></div>
+  </div>
+</section>
+
+<footer>
+  核对方式：压缩包逐项解压检测、用系统自带解析器读取技能开头的信息区、逐字节比对、说明书交叉引用扫描、外部链接两次打开请求与对照组验证、本机技能目录实测。所有结论均来自本次实际执行结果；未核实的一律写明「待核实」，未找到替代资料的一律写明「暂未找到」。
+</footer>
+
+</div>
+</body>
+</html>
