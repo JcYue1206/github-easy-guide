@@ -15,7 +15,7 @@
 
 **只需要下载一个文件：`github-easy-guide.zip`。** 它就在这个页面上方的文件列表里，和 README.md 在同一层。点开它，再点右边的下载按钮（一个向下的箭头）。
 
-不用先解压。真要解压，里面是一个 `github-easy-guide` 文件夹，文件夹里只有一个 `SKILL.md`。
+不用先解压。真要解压，里面是一个 `github-easy-guide` 文件夹，文件夹里只有一个 `SKILL.md`（这是写给 AI 看的说明书，你不用打开它）。
 
 > 打不开 GitHub？请找分享给你的人，直接把 `github-easy-guide.zip` 发给你。
 
@@ -25,10 +25,10 @@
 
 ### 方法一（推荐）：让你的 AI 助手自己装
 
-适用于 WorkBuddy、TRAE、CodeBuddy、Qoder 这类能安装技能的助手。
+适用于 WorkBuddy、TRAE、CodeBuddy、Qoder、Cursor 这类能安装技能的助手。助手会自己判断放进哪个文件夹，你不用管。
 
 1. 打开助手，新建一个对话
-2. 把 `github-easy-guide.zip` 拖进输入框
+2. 把 `github-easy-guide.zip` 拖进输入框（助手能上网的话，也可以直接发仓库链接）
 3. 复制这句话发给它：
 
 ```
@@ -37,12 +37,11 @@
 
 4. 它回复“装好了”以后，新开一个对话就能用
 
-### 它说装不了？
+### 用的是豆包、元宝这类聊天 App，或者装不上？
 
-打开同一层里的 **[INSTALL.md](INSTALL.md)**（完整安装清单），里面有：
-- 在 WorkBuddy、TRAE 等界面里点按钮安装
-- 手动放文件夹（中国常用的助手、中国以外常用的助手）
-- 豆包、元宝、DeepSeek 这类聊天 App 的用法
+看同一层里的 **[INSTALL.md](INSTALL.md)**：
+- 方法二：聊天 App 没有“装技能”的功能，把说明贴进对话也能用
+- 最后一节「装不上怎么办」：按顺序排查
 
 ### 怎么确认装好了
 
@@ -52,7 +51,7 @@
 你现在有没有一个叫 github-easy-guide 的技能？有的话，用一句话告诉我它是干嘛的。
 ```
 
-它答得出「把 GitHub 项目拆成大白话步骤」就是装好了。答不上来，看 [INSTALL.md](INSTALL.md) 最后一节。
+它答得出「把 GitHub 项目讲成小白能照着做的步骤」就是装好了。答不上来，看 [INSTALL.md](INSTALL.md) 最后一节。
 
 ---
 
